@@ -1,0 +1,12 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(86, 86, 86);
+    padding: 10px;
+    color: white;
+}
+
+.footer span {
+    cursor: pointer;  
+}

@@ -1,6 +1,6 @@
 import './App.css';
 import {React} from 'react';
-import {Routes,Route,Navigate} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import Dashboard from './pages/Dashboard/Dashboard';
 import SignUp from './pages/SignUp/SignUp';
 import SignIn from './pages/SignIn/SignIn';

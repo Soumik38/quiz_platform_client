@@ -1,0 +1,37 @@
+.fix-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.header {
+    display: flex;
+    justify-content: center; /* Center the title horizontally */
+    align-items: center; /* Center items vertically */
+    position: relative;
+    height: 60px; /* Adjust as needed */
+    background-color: red; /* Adjust as needed */
+}
+
+.watermark {
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    opacity: 0.5; /* Make it look like a watermark */
+    font-size: 20px; /* Adjust as needed */
+    margin: 0;
+}
+
+.header-button {
+    position: absolute;
+    right: 20px; /* Adjust as needed */
+    background-color: transparent;
+    border: none;
+    color: black; /* Adjust to match the header color */
+    font-size: 16px; /* Adjust as needed */
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.header-button:hover {
+    text-decoration: underline; /* Optional: underline on hover for better visibility */
+}

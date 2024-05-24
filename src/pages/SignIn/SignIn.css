@@ -71,15 +71,15 @@ input {
 
 .login-button {
     border-radius: 32px;
-    background: #9176ff;
-    color: #3639fe;
+    background: red;
+    color: #530000;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
 }
 
 .login-button:hover {
-    background-color: #402e85;
+    background-color: #fc8080;
 }
 
 

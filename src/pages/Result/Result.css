@@ -1,0 +1,35 @@
+.result-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: calc(100vh - 120px); /* Subtract header and footer heights */
+}
+
+.result-content {
+    text-align: center;
+}
+
+.result-content h1 {
+    margin-bottom: 20px;
+}
+
+.result-content h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.result-content button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.result-content button:hover {
+    background-color: #45a049;
+}

@@ -1,16 +1,30 @@
-import React from "react"
-import { useNavigate,useLocation } from "react-router-dom"
-
+import React, { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
+import Header from '../header/header'
+import Footer from '../footer/footer'
+import './Result.css'
 const Result=()=>{
     const location=useLocation()
-    const nav=useNavigate()
-    const re =location.state.final_result || ''
     const marks=location.state.marks || 0
+    const full=location.state.full || 0
+    const [result,setResult]=useState()
+
+    useEffect(()=>{
+        const points=marks/full
+        setResult(points>=0.5?'Congratulations!':'Try Again')
+    },[marks,full])
 
     return(<>
-        you have {re}
-        <h1>{marks}/10</h1>
+        <Header page='result' />
+        <div className="result-container">
+            <div className="result-content">
+                <h1>{result}</h1>
+                <h4>You have scored :</h4>
+                <h2>{marks}/{full}</h2>
+            </div>
+        </div>
+        <Footer/>
     </>)
-
+    
 }
 export default Result

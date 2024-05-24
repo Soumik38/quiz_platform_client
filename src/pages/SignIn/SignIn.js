@@ -15,8 +15,8 @@ const SignIn = () => {
             console.log(res)
             if(res.data==='authorize'){
               localStorage.setItem('token',true)
-              localStorage.setItem('myEmail', JSON.stringify(email))
-              nav('/',{state:{email}})
+              localStorage.setItem('myEmail', email)
+              nav('/')
             }else if(res.data==='notexists'){
               alert('User does not exist.')
             }else if(res.data==='wrongpass'){

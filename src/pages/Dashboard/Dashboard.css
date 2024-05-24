@@ -1,0 +1,33 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;    
+}
+
+.user-name{
+    color: red;
+}
+
+.container-sign {
+    background-color: #00b406; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px; /* Adjust as needed */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: rgb(29, 255, 29) 0.3s ease;
+}
+
+.container button :hover {
+    background-color: #45a049; /* Darker green on hover */
+}
