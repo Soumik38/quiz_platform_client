@@ -19,7 +19,7 @@ const SignUp = () => {
         if(res.data==='exists'){
           alert('User already exists.')   
         }else if(res.data==='notexists'){
-          localStorage.setItem('jwt', JSON.stringify('loggedin'))
+          localStorage.setItem('token', true)
           localStorage.setItem('myEmail', email)
           nav('/',{state:{email}})
         

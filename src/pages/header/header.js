@@ -5,7 +5,7 @@ const Header=(props)=>{
     return(<div className='fix-header'>
         <div className="header">
             <h3 className='watermark'>ECL</h3>
-            {props.login!==false && <h1 className='title'>Cyber-Security Quiz</h1>}
+            <h1 className='title'>Cyber-Security</h1>
             {(props.page==='dash' && props.login===true) && 
                 <button className='header-button' onClick={()=>{
                     localStorage.clear()
