@@ -7,18 +7,15 @@ const Result=()=>{
     const location=useLocation()
     const marks=location.state.marks || 0
     const full=location.state.full || 0
-    const [result,setResult]=useState()
+    const result=location.state.qualify || false
 
-    useEffect(()=>{
-        const points=marks/full
-        setResult(points>=0.5?'Congratulations!':'Try Again')
-    },[marks,full])
+    
 
     return(<>
         <Header page='result' />
         <div className="result-container">
             <div className="result-content">
-                <h1>{result}</h1>
+                {result===true?<h1>Congratulations</h1>:<h1>Try Again</h1>}
                 <h4>You have scored :</h4>
                 <h2>{marks}/{full}</h2>
             </div>

@@ -4,11 +4,12 @@ body {
     background-color: #fff;
 }
 
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+  
 }
 
 .login-container {
@@ -42,11 +43,8 @@ form {
     margin-top: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-}
+
+
 
 input {
     width: 100%;
@@ -82,8 +80,6 @@ input {
     background-color: #fc8080;
 }
 
-
-
 .buttons-container {
     text-align: center;
     width: 40%;
@@ -92,4 +88,13 @@ input {
 small {
     margin: 10px;
     cursor: pointer;
+}
+
+.checked {
+    display: flex;
+    justify-content: left;
+}
+
+.checked input{
+    width: fit-content;
 }

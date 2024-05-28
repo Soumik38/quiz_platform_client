@@ -1,0 +1,18 @@
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-button {
+    color: red;
+    cursor: pointer;
+}
+
+.submit-container {
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+.master-container {
+    margin-top: 10px;
+}

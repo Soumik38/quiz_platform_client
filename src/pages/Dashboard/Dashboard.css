@@ -1,12 +1,62 @@
+.login-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table-container {
+    margin: 20px;
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+  
+  .table-container th, .table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .table-container th {
+    background-color: #f2f2f2;
+    color: black;
+  }
+
+  .table-container-qualified {
+    color: lime;
+  }
+  
+  .table-container tr:hover {
+    background-color: #ddd;
+  }
+  
+  .table-container th {
+    background-color: #ff0000;
+    color: white;
+  }
+
+
+
+
+
+
+
+
+
+
+
 .box {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    height:86vh;
 }
 
 .container {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    padding: 40px;
 }
 
 .user-name{

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Header from "../../header/header";
+import Footer from "../../footer/footer";
 const AddQ=()=>{
 
     const [title,setTitle]=useState('')
@@ -14,7 +16,6 @@ const AddQ=()=>{
         if(!title || !ans1 || !ans2 ||!ans3 ||!ans4 || !correctans) {
             alert('Fill all required fields.')
         }
-        setcans(correctans - 1)
         try{
             await axios.post(`http://localhost:4000/addq`,{title,ans1,ans2,ans3,ans4,correctans}).then(res=>{
                 if(res.data==='success'){
@@ -28,7 +29,7 @@ const AddQ=()=>{
     }
 
     return(
-        <>
+        <>  <Header page='addq'/> 
             <div className='container'>
                 <div className='login-container'>
                     <form action='POST' className=''>
@@ -42,6 +43,7 @@ const AddQ=()=>{
                     </form>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

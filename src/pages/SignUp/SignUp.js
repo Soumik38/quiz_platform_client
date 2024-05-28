@@ -1,12 +1,22 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './SignUp.css'
+import Header from '../header/header'
+import Footer from '../footer/footer'
 const SignUp = () => {
   const [email,setEmail]=useState('')
   const [pass,setPass]=useState('')
   const [name,setName]=useState('')
   const nav=useNavigate()
+
+  const newLogin=()=>{
+    localStorage.clear()
+  }
+
+  useEffect(()=>{
+    newLogin()
+  },[])
   
   const submit=async(e)=>{
     e.preventDefault()
@@ -21,7 +31,7 @@ const SignUp = () => {
         }else if(res.data==='notexists'){
           localStorage.setItem('token', true)
           localStorage.setItem('myEmail', email)
-          nav('/',{state:{email}})
+          nav('/dashboard',{state:{email}})
         
         }
       })
@@ -31,7 +41,8 @@ const SignUp = () => {
   }
 
   
-  return (
+  return (<>
+    <Header page='quiz'/>
     <div className='container'>
       <div className='signup-container'>
         <h1 className='text-4xl font-extrabold'>Welcome</h1>
@@ -54,7 +65,8 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-  )
+    <Footer/>
+  </>)
 }
 
 export default SignUp

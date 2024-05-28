@@ -1,0 +1,18 @@
+/* user_list.css */
+.table-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-container {
+    margin-top: 100px;
+   
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: left;
+}
+
+.t-row{
+    cursor:pointer
+}

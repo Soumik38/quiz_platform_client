@@ -3,7 +3,7 @@ const PrivateRoute=()=>{
     // let auth={'token':false}
     return(
         // auth.token
-        localStorage.getItem('token')==='true'? <Outlet/> : <Navigate to='/'/>
+        localStorage.getItem('token')==='true'? <Outlet/> : <Navigate to='/signin'/>
     )
 }
 export default PrivateRoute
