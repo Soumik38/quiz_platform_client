@@ -30,7 +30,7 @@ const SignIn = () => {
             if(res.data==='authorize'){
               localStorage.setItem('token',true)
               localStorage.setItem('myEmail', email)
-              adminChecked===true?nav('/admin'):nav('/dashboard')
+              adminChecked===true?nav('/admin'):nav('/')
             }else if(res.data==='notexists'){
               alert('User does not exist.')
             }else if(res.data==='wrongpass'){
@@ -44,7 +44,7 @@ const SignIn = () => {
 
   return (
     <>
-      <Header page='quiz'/>
+      <Header page='signin'/>
       <div className='container'>
       <div className='login-container'>
         <h1 className='text-4xl font-extrabold'>Welcome Back</h1>

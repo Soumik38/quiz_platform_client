@@ -25,7 +25,7 @@ const UserList=()=>{
 
     return(<>
     <Header page='admin'/>
-        <div className="table-holder">
+        <div className="container">
         <table className="table-container">
             <thead>
                 <tr>

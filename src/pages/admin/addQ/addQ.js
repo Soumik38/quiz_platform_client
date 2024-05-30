@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Header from "../../header/header";
 import Footer from "../../footer/footer";
+import './addQ.css'
 const AddQ=()=>{
 
     const [title,setTitle]=useState('')
@@ -33,12 +34,12 @@ const AddQ=()=>{
             <div className='container'>
                 <div className='login-container'>
                     <form action='POST' className=''>
-                        <input type='text' name='email' placeholder='Title' onChange={(e)=>{setTitle(e.target.value)}}/>
+                        <textarea name='email' placeholder='Title' onChange={(e)=>{setTitle(e.target.value)}}/>
                         <input type='text' name='ans1' placeholder='Option 1' onChange={(e)=>{setans1(e.target.value)}}/>
                         <input type='text' name='ans2' placeholder='Option 2' onChange={(e)=>{setans2(e.target.value)}}/>
                         <input type='text' name='ans3' placeholder='Option 3' onChange={(e)=>{setans3(e.target.value)}}/>
                         <input type='text' name='ans4' placeholder='Option 4' onChange={(e)=>{setans4(e.target.value)}}/>
-                        <input type='number' name='cans' placeholder='Correct Option' onChange={(e)=>{setcans(e.target.value)}}/>
+                        <input type='number' name='cans' placeholder='Correct Option ( 1 to 4 )' onChange={(e)=>{setcans(e.target.value)}}/>
                         <button type='submit' onClick={submit} className='login-button'>Add</button>
                     </form>
                 </div>

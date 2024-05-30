@@ -18,11 +18,12 @@ import PrivateRoute from './util/PrivateRoute';
 function App() {
   return (
     <Routes>
-      <Route path='/dashboard' element={<Dashboard/>}/>
+      
       <Route path='/' element={<Main/>}/>
       <Route path='/signin' element={<SignIn/>}/>
       <Route path='/signup' element={<SignUp/>}/>
       <Route element={<PrivateRoute/>}>
+        <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/quiz' element={<Quiz/>}/>
         <Route path='/result' element={<Result/>}/>
         <Route path='/addq' element={<AddQ/>}/>

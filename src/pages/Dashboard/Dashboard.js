@@ -25,8 +25,6 @@ const Dashboard=()=> {
         })
     }
 
-    
-
     useEffect(() => {
       setEmail(localStorage.getItem('myEmail') ||'')
       
@@ -54,25 +52,24 @@ const Dashboard=()=> {
       })
     },[email])
 
-
     const DateTimeExtractor = (timestamp) => {
       const date = new Date(timestamp);
       const dateString = date.toISOString().split('T')[0];
-
       const timeString = date.toISOString().split('T')[1].split('.')[0];
-      return [dateString,timeString]
+      return (<>
+        <td>{dateString}</td>
+        <td>{timeString}</td></>)
     };
-
 
     return(
         <>
-          {localStorage.getItem('token')==='true'?<Header page='dash' login={true}/>:<Header page='dash' login={false}/>}
-            <div className="box">
-              {localStorage.getItem('token')==='true'?
-              <div className="login-view">
-                
-                {attempts?.length>0 && <div className="container">
-                  <table className="table-container">
+          <Header page='signin'/>
+            <div className="container">
+            <h2>A</h2>
+            <button className='container-sign' onClick={startQuiz}>Start Quiz</button>
+           
+            {attempts?.length>0 &&<h2>My Attempts :</h2>}
+                  {attempts?.length>0 &&<table className="table-container">
                     <thead>
                       <tr>
                         <th>Date</th>
@@ -83,29 +80,14 @@ const Dashboard=()=> {
                     <tbody>
                       {attempts?.map((att,attIn)=>{
                         return(<tr className={att.qualify===true && "table-container-qualified"} >
-                          <td>{DateTimeExtractor(att.date)[0]}</td>
-                          <td>{DateTimeExtractor(att.date)[1]}</td>
+                          {DateTimeExtractor(att.date)}
                           <td>{att.marks}</td>
                         </tr>)
                       })}
                     </tbody>
-                  </table>
-                </div>}
-
-                <div className="container">
-                  <h1>Welcome <span className="user-name">{name}</span></h1>
-                  <button className='container-sign' onClick={startQuiz}>Start</button>
-                </div>
-
-
+                  </table>}
               </div>
-              :<div className="container">
-                <h1>Welcome to the  <span className="user-name">Cyber-Security Quiz</span></h1>
-                <h3>Sign In or Sign Up to get started</h3>
-                <button className='container-sign' onClick={()=>nav('/signin')}>Sign In</button>
-                <button className='container-sign' onClick={()=>nav('/signup')}>Sign Up</button>
-              </div>}
-            </div>
+              <h3>e</h3>
           <Footer/>
         </>
     )

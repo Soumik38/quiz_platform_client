@@ -31,7 +31,7 @@ const SignUp = () => {
         }else if(res.data==='notexists'){
           localStorage.setItem('token', true)
           localStorage.setItem('myEmail', email)
-          nav('/dashboard',{state:{email}})
+          nav('/',{state:{email}})
         
         }
       })
@@ -42,24 +42,17 @@ const SignUp = () => {
 
   
   return (<>
-    <Header page='quiz'/>
+    <Header page='signin'/>
     <div className='container'>
       <div className='signup-container'>
         <h1 className='text-4xl font-extrabold'>Welcome</h1>
         <form action='POST'>
-          {/* <label for="name">Name</label> */}
           <input type='text' name='Name' id='name' placeholder='Enter name' onChange={(e)=>{setName(e.target.value)}}/>
-          {/* <label for="email">Email Address</label> */}
           <input type='email' name='email' id='email' placeholder='Email Address' onChange={(e)=>{setEmail(e.target.value)}}/>
-          {/* <label for="password">Password</label> */}
           <input name='password' type='password' id='password' placeholder='Set password' onChange={(e)=>{setPass(e.target.value)}}/>
-          {/* <label for="confirmPassword">Confirm Password</label> */}
-          {/* <input name='confirmPassword' type='password' id='password' placeholder='Confirm password' onChange={(e)=>{setPass(e.target.value)}}/>
-           */}
-          
+          {/* <input name='confirmPassword' type='password' id='password' placeholder='Confirm password' onChange={(e)=>{setPass(e.target.value)}}/> */}       
           <button type='submit' onClick={submit} className='signup-button'>Sign Up</button>
         </form>
-        {/* <small>By creating an account, you agree to the <a >Terms of Use</a> and <a>Privacy Policy</a>.</small> */}
         <div className='mt-4'>
         <small onClick={()=>nav('/signin')} >Already have an account ?</small>
         </div>

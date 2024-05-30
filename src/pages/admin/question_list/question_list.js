@@ -26,7 +26,6 @@ const QuestionList=()=>{
                 if(res.data==='success'){
                     alert('Question Deleted')
                     fetchQ()
-                    window.location.reload()
                 }
             })
         }catch(e){
@@ -44,12 +43,11 @@ const QuestionList=()=>{
                 <div className="submit-container">
                     <button onClick={()=>nav('/addq')} className="submit-button">Add Question</button>
                 </div>
-                <div className="master-container">        
                     {qArr?.map((q, qIndex) => (
                         <div key={qIndex} className="question-block">
                             <div className="question-header">
                                 <h3 className="question-title">{qIndex+1}. {q.title}</h3>
-                                <span className='delete-button' onClick={()=>deleteQ(q)}>delete</span>
+                                <span className='delete-button' onClick={()=>deleteQ(q)}>X</span>
                             </div>
                             <div className="options-container">
                                 {q.options.map((op, opIndex) => (
@@ -63,8 +61,7 @@ const QuestionList=()=>{
                         </div>
                     ))}
                 </div>
-                
-            </div>
+                <h6>q</h6>
             <Footer/>
     </>)
 }

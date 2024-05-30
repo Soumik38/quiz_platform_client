@@ -22,20 +22,18 @@ function Quiz() {
     const handleSubmit = async() => {
         let marks=0
         questions.forEach((q, qIndex) => {
-            console.log(q.options[q.correctans],'===',q.options[selectedOptions[qIndex]])
+            // console.log(q.options[q.correctans],'===',q.options[selectedOptions[qIndex]])
             if (selectedOptions[qIndex] !== undefined && q.options[q.correctans] === q.options[selectedOptions[qIndex]]) {
                 marks++
-                console.log('correct')
+                // console.log('correct')
             }
         });
         
         console.log("Marks", marks);
         const points=marks/questions.length
         const qualify=points>=0.3?true:false
-
-        const date = new Date();
-
         nav('/result', { state: { marks,full:questions.length,qualify} });
+        const date = new Date();
 
         try{
             await axios.post('http://localhost:4000/attempt',{email,marks,qualify,date}).then(res=>{
@@ -46,13 +44,16 @@ function Quiz() {
         }catch (e){
             alert('Attempt not stored')
         }
+
+        
     };
 
     return (
         <>
             <Header page='quiz'/>
             <div className="quiz-container">
-                <div className="master-container">        
+                {/* <div className="master-container"> */}
+                    <h6>quiz</h6>
                     {questions.map((q, qIndex) => (
                         <div key={qIndex} className="question-block">
                             <h3 className="question-title">{qIndex+1}. {q.title}</h3>
@@ -78,7 +79,8 @@ function Quiz() {
                         <button onClick={handleSubmit} className="submit-button">Submit</button>
                     </div>
                 </div>
-            </div>
+                <h6>quiz</h6>
+            {/* </div> */}
             <Footer/>
         </>
     );

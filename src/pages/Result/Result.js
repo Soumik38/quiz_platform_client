@@ -12,7 +12,7 @@ const Result=()=>{
     
 
     return(<>
-        <Header page='result' />
+        <Header page='quiz' />
         <div className="result-container">
             <div className="result-content">
                 {result===true?<h1>Congratulations</h1>:<h1>Try Again</h1>}

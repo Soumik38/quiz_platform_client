@@ -46,6 +46,7 @@ const UserRes=()=>{
     return(<>
         <Header page='user_res'/>
         <div className="container">
+          <h1>Q</h1>
                   <div>
                     <h1>NAME : {name}</h1>
                     <h2>E-MAIL : {email} </h2>
@@ -69,6 +70,7 @@ const UserRes=()=>{
                     </tbody>
                   </table>
                 </div>
+                <h2>q</h2>
                 <Footer/>
     </>)
 }

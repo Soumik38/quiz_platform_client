@@ -35,3 +35,7 @@
 .header-button:hover {
     text-decoration: underline; /* Optional: underline on hover for better visibility */
 }
+
+.watermark{
+    cursor: pointer;
+}

@@ -10,7 +10,7 @@ const Admin=()=>{
     }
 
     return(<>
-        <Header page='admin_panel'/>
+        <Header page='login'/>
         <div className="container">
           <h1>Welcome to the admin panel</h1>
           <button className='container-sign' onClick={()=>nav('/question_list')}>Add Questions</button>

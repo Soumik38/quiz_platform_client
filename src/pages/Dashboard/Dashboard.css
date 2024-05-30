@@ -1,14 +1,8 @@
-.login-view {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+
 
 .table-container {
-    margin: 20px;
     border-collapse: collapse;
     width: 100%;
-
   }
   
   .table-container th, .table-container td {
@@ -45,14 +39,6 @@
 
 
 
-.box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height:86vh;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -72,12 +58,16 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 20px; /* Adjust as needed */
+    margin: 10px;
     cursor: pointer;
     border-radius: 8px;
     transition: rgb(29, 255, 29) 0.3s ease;
 }
 
 .container button :hover {
-    background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.att{
+  margin-top: 70px;
 }

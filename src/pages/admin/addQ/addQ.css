@@ -1,0 +1,6 @@
+textarea {
+    height: 100px; /* Adjust as needed */
+    resize: none;
+    width :400px;
+    margin: 20px;
+}
