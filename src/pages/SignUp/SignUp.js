@@ -23,18 +23,20 @@ const SignUp = () => {
     try{
       if(!name || !email || !pass) {
         alert('Fill all required fields.')
-      }
-      await axios.post(`http://localhost:4000/signup`,{name,email,pass}).then(res=>{
+      }else{
+        await axios.post(`https://quiz-platform-server.onrender.com/signup`,{name,email,pass}).then(res=>{
         console.log(res.data)
-        if(res.data==='exists'){
+        if(res.data.auth==='exists'){
           alert('User already exists.')   
-        }else if(res.data==='notexists'){
-          localStorage.setItem('token', true)
+        }else if(res.data.auth==='notexists'){
+          localStorage.setItem('token',res.data.token)
+          localStorage.setItem('loggedin',true)
           localStorage.setItem('myEmail', email)
           nav('/',{state:{email}})
         
         }
       })
+      }
     }catch(e){
       alert('invalid')
     }

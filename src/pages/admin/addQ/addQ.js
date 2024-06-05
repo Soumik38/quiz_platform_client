@@ -18,7 +18,7 @@ const AddQ=()=>{
             alert('Fill all required fields.')
         }
         try{
-            await axios.post(`http://localhost:4000/addq`,{title,ans1,ans2,ans3,ans4,correctans}).then(res=>{
+            await axios.post(`https://quiz-platform-server.onrender.com/addq`,{title,ans1,ans2,ans3,ans4,correctans}).then(res=>{
                 if(res.data==='success'){
                     alert('Question Added')
                     window.location.reload()
@@ -31,7 +31,7 @@ const AddQ=()=>{
 
     return(
         <>  <Header page='addq'/> 
-            <div className='container'>
+            <div className='addq-container'>
                 <div className='login-container'>
                     <form action='POST' className=''>
                         <textarea name='email' placeholder='Title' onChange={(e)=>{setTitle(e.target.value)}}/>

@@ -4,3 +4,10 @@ textarea {
     width :400px;
     margin: 20px;
 }
+
+.addq-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}

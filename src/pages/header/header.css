@@ -9,7 +9,7 @@
     justify-content: center; /* Center the title horizontally */
     align-items: center; /* Center items vertically */
     position: relative;
-    height: 60px; /* Adjust as needed */
+    height: 10vh; /* Adjust as needed */
     background-color: red; /* Adjust as needed */
 }
 

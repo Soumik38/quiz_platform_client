@@ -1,8 +1,14 @@
-
+.t-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .table-container {
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
   }
   
   .table-container th, .table-container td {
@@ -30,44 +36,13 @@
   }
 
 
-
-
-
-
-
-
-
-
-
-.container {
+  .d-container {
     display: flex;
     flex-direction: column;
-    padding: 40px;
-}
-
-.user-name{
-    color: red;
-}
-
-.container-sign {
-    background-color: #00b406; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: rgb(29, 255, 29) 0.3s ease;
-}
-
-.container button :hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-.att{
-  margin-top: 70px;
-}
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Adjust width as needed */
+    height:auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }

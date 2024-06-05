@@ -4,6 +4,8 @@ import Footer from "../footer/footer"
 import { Timeline} from 'react-twitter-widgets'
 import { useNavigate } from "react-router-dom"
 import { useState,useEffect } from "react"
+import dropDown from '../../assets/drop-down.png'
+import dropUp from '../../assets/drop-up.png'
 import './main.css'
 const Main=()=>{
     const nav=useNavigate()
@@ -12,7 +14,7 @@ const Main=()=>{
     useEffect(() => {
         setEmail(localStorage.getItem('myEmail') ||'')
         
-        fetch(`http://localhost:4000/user/${email}`)
+        fetch(`https://quiz-platform-server.onrender.com/user/${email}`)
           .then(response => response.json())
           .then(data => {
             if (data.error) {
@@ -41,13 +43,13 @@ const Main=()=>{
 
 
     return(<>
-    {localStorage.getItem('token')==='true'? <Header page='login'/> : <Header login={false}/>}
+    {localStorage.getItem('loggedin')==='true'? <Header page='login'/> : <Header login={false}/>}
         <div className="top">
-            {localStorage.getItem('token')==='true'?<div className="view">
+            {localStorage.getItem('loggedin')==='true'?<div className="view">
                 <div className="master-container">
                     <div className="q-container">
                         <h1>Welcome <span className="user-name">{name}</span></h1>
-                        <button className='container-sign' onClick={()=>nav('/dashboard')}>Take Quiz</button>
+                        <button className='login-button' onClick={()=>nav('/dashboard')}>Take Quiz</button>
                     </div>
                     <div className="timeline">
                         <Timeline dataSource={{sourceType: 'profile',screenName: 'TheCyberSecHub'}} options={{height: '450',width:'600'}}/>
@@ -56,7 +58,10 @@ const Main=()=>{
                 <div className="awareness">
                     <h2>Awareness</h2>
                     <div>
-                        <h3 onClick={toggleMobile}>Mobile Security : </h3>
+                        <div className="drop-down-menu" onClick={toggleMobile}>
+                            <h3>Mobile Security  </h3>
+                            {mobile?<img src={dropUp} />:<img src={dropDown} />}
+                        </div>
                         {mobile && <ol>
                             <li><strong>Keep Your OS and Apps Updated:</strong> Regularly update your mobile operating system and apps to patch security vulnerabilities and get the latest features.</li>
                             <li><strong>Use Strong Passwords and Biometric Authentication:</strong> Enable strong passwords, PINs, or biometric authentication (fingerprint, facial recognition) to secure your device.</li>
@@ -72,7 +77,10 @@ const Main=()=>{
                         </ol>}
                     </div>
                     <div>
-                        <h3 onClick={toggleWeb}>Browser Security : </h3>
+                        <div className="drop-down-menu" onClick={toggleWeb}>
+                            <h3>Web Security  </h3>
+                            {web?<img src={dropUp} />:<img src={dropDown} />}
+                        </div>
                         {web && <ol>
                             <li><strong>Keep Your Browser Updated:</strong> Regularly update your browser to ensure you have the latest security patches and features.</li>
                             <li><strong>Use Strong, Unique Passwords:</strong> Use strong, unique passwords for different websites and services. Consider using a reputable password manager.</li>
@@ -88,7 +96,10 @@ const Main=()=>{
                         </ol>}
                     </div>
                     <div>
-                        <h3 onClick={toggleHardware}>Hardware Security : </h3>
+                        <div className="drop-down-menu" onClick={toggleHardware}>
+                            <h3>Hardware Security  </h3>
+                            {hardware?<img src={dropUp} />:<img src={dropDown} />}
+                        </div>
                         {hardware && <ol>
                             <li><strong>Keep Firmware Updated:</strong> Regularly update the firmware of all hardware devices to patch vulnerabilities and improve security features.</li>
                             <li><strong>Secure Physical Access:</strong> Restrict physical access to sensitive hardware to prevent unauthorized tampering or theft.</li>
@@ -106,11 +117,13 @@ const Main=()=>{
                 </div>
             </div>
             :
-            <div className="container">
+            <div className="view">
             <h1>Welcome to the  <span className="user-name">Cyber-Security Awareness Platform</span></h1>
                 <h3>Sign In or Sign Up to get started</h3>
-                <button className='container-sign' onClick={()=>nav('/signin')}>Sign In</button>
-                <button className='container-sign' onClick={()=>nav('/signup')}>Sign Up</button>
+                <div className="signinup">
+                    <button className='login-button' onClick={()=>nav('/signin')}>Sign In</button>
+                    <button className='login-button' onClick={()=>nav('/signup')}>Sign Up</button>
+                </div>
             </div>}
         </div>
         

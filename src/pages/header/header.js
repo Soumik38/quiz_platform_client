@@ -12,7 +12,7 @@ const Header=(props)=>{
     }
     return(<div className='fix-header'>
         <div className="header">
-            <h3 className='watermark'>ECL</h3>
+            <h3 className='watermark' onClick={()=>window.location.href='https://www.easterncoal.nic.in/'}>ECL</h3>
             <h1 className='title'>Cyber-Security</h1>
             {props.page==='login' && 
                 <button className='header-button' onClick={()=>{

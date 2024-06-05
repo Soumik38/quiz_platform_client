@@ -12,9 +12,13 @@ const Admin=()=>{
     return(<>
         <Header page='login'/>
         <div className="container">
-          <h1>Welcome to the admin panel</h1>
-          <button className='container-sign' onClick={()=>nav('/question_list')}>Add Questions</button>
-          <button className='container-sign' onClick={displayUsers}>Display users</button>
+          <div>
+            <h1>Welcome to the admin panel</h1>
+            <div>
+                <button className='login-button' onClick={()=>nav('/question_list')}>Add Questions</button>
+                <button className='login-button' onClick={displayUsers}>Display users</button>
+            </div>
+          </div>
         </div>
         <Footer/>
     </>)

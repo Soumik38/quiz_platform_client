@@ -24,19 +24,24 @@ const SignIn = () => {
     const submit=async (e)=>{
       e.preventDefault()
         try{
-          console.log(adminChecked)
-          await axios.post(`http://localhost:4000/signin`,{email,pass,adminChecked}).then(res=>{
-            console.log(res)
-            if(res.data==='authorize'){
-              localStorage.setItem('token',true)
-              localStorage.setItem('myEmail', email)
-              adminChecked===true?nav('/admin'):nav('/')
-            }else if(res.data==='notexists'){
-              alert('User does not exist.')
-            }else if(res.data==='wrongpass'){
-              alert('Wrong password')
-            }
-          })
+          // console.log(adminChecked)
+          if(!email || !pass) {
+            alert('Fill all required fields.')
+          }else{
+            await axios.post(`https://quiz-platform-server.onrender.com/signin`,{email,pass,adminChecked}).then(res=>{
+              // console.log(res.data)
+              if(res.data.auth==='authorize'){
+                localStorage.setItem('token',res.data.token)
+                localStorage.setItem('loggedin',true)
+                localStorage.setItem('myEmail', email)
+                adminChecked===true?nav('/admin'):nav('/')
+              }else if(res.data.auth==='notexists'){
+                alert('User does not exist.')
+              }else if(res.data.auth==='wrongpass'){
+                alert('Wrong password')
+              }
+            })
+          }
         }catch(e){
           alert('Error')
         }

@@ -36,7 +36,7 @@ function Quiz() {
         const date = new Date();
 
         try{
-            await axios.post('http://localhost:4000/attempt',{email,marks,qualify,date}).then(res=>{
+            await axios.post('https://quiz-platform-server.onrender.com/attempt',{email,marks,qualify,date}).then(res=>{
                 if(res.data==='success'){
                     alert('Attempt stored')
                 }

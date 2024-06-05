@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  
+    height: calc(100vh - 15vh);
 }
 
 .login-container {
@@ -72,6 +72,7 @@ input {
     background: red;
     color: #530000;
     padding: 10px 20px;
+    margin: 5px;
     border: none;
     cursor: pointer;
 }

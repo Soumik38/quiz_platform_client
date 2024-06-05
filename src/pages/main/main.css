@@ -39,3 +39,19 @@
 .awareness h3{
     cursor:pointer;
 }
+
+.user-name{
+    color: red;
+}
+
+img{
+    height:15px;
+    width: 15px;
+    padding: 10px;
+}
+
+.drop-down-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

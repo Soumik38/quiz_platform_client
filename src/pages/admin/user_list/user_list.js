@@ -9,7 +9,7 @@ const UserList=()=>{
     const [users,setUsers]=useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:4000/all_users`).then(response=>response.json()).then(data=>{
+        fetch(`https://quiz-platform-server.onrender.com/all_users`).then(response=>response.json()).then(data=>{
         console.log(data)
         if (data.error) {
           console.error(data.error);

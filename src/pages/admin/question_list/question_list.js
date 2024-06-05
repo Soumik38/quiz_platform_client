@@ -13,7 +13,7 @@ const QuestionList=()=>{
     const fetchQ=async()=>{
         
         try{
-            await axios.get('http://localhost:4000/all_questions').then((response)=>{
+            await axios.get('https://quiz-platform-server.onrender.com/all_questions').then((response)=>{
             setQArr(response.data)})
         }catch(error){
             console.log(error)
@@ -22,7 +22,7 @@ const QuestionList=()=>{
 
     const deleteQ=async(q)=>{
         try{
-            await axios.post(`http://localhost:4000/deleteq`,{id:q._id}).then(res=>{
+            await axios.post(`https://quiz-platform-server.onrender.com/deleteq`,{id:q._id}).then(res=>{
                 if(res.data==='success'){
                     alert('Question Deleted')
                     fetchQ()
@@ -61,7 +61,6 @@ const QuestionList=()=>{
                         </div>
                     ))}
                 </div>
-                <h6>q</h6>
             <Footer/>
     </>)
 }

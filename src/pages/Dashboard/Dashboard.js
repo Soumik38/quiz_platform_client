@@ -17,7 +17,7 @@ const Dashboard=()=> {
     
     const startQuiz=async(e)=>{
         e.preventDefault()
-        await axios.get('http://localhost:4000/start').then((response)=>{
+        await axios.get('https://quiz-platform-server.onrender.com/start').then((response)=>{
             setQArr([...qArr , response.data])
             nav('/quiz',{state:{array:response.data,email}})
         }).catch((error)=>{
@@ -28,7 +28,7 @@ const Dashboard=()=> {
     useEffect(() => {
       setEmail(localStorage.getItem('myEmail') ||'')
       
-      fetch(`http://localhost:4000/user/${email}`)
+      fetch(`https://quiz-platform-server.onrender.com/user/${email}`)
         .then(response => response.json())
         .then(data => {
           if (data.error) {
@@ -42,7 +42,7 @@ const Dashboard=()=> {
 	  }, [name,email])
     
     useEffect(()=>{
-      fetch(`http://localhost:4000/get_attempts/${email}`).then(response=>response.json()).then(data=>{
+      fetch(`https://quiz-platform-server.onrender.com/get_attempts/${email}`).then(response=>response.json()).then(data=>{
         console.log(data)
         if (data.error) {
           console.error(data.error);
@@ -64,12 +64,12 @@ const Dashboard=()=> {
     return(
         <>
           <Header page='signin'/>
-            <div className="container">
-            <h2>A</h2>
-            <button className='container-sign' onClick={startQuiz}>Start Quiz</button>
-           
-            {attempts?.length>0 &&<h2>My Attempts :</h2>}
-                  {attempts?.length>0 &&<table className="table-container">
+            <div className="d-container">
+            
+            <button className='login-button' onClick={startQuiz}>Start Quiz</button>
+                  {attempts?.length>0 && <div className="t-container">
+                    <h2>My Attempts :</h2>
+                    <table className="table-container">
                     <thead>
                       <tr>
                         <th>Date</th>
@@ -85,9 +85,10 @@ const Dashboard=()=> {
                         </tr>)
                       })}
                     </tbody>
-                  </table>}
+                  </table>
+                    </div>}
               </div>
-              <h3>e</h3>
+              
           <Footer/>
         </>
     )
